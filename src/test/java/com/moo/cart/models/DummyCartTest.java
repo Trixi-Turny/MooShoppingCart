@@ -50,6 +50,4 @@ class DummyCartTest {
         assertEquals(new ArrayList<DummyItem>(), cart.clearCart());
     }
 
-
-
 }

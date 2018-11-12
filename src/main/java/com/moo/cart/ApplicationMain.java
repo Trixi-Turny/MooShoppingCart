@@ -45,16 +45,28 @@ public class ApplicationMain {
         before((request, response) -> response.type(JSON));
         DummyCart cart = new DummyCart();
 
+        /**
+         * provides a healthcheck for the server - returns 200 when healthy
+         */
         path("/health", () -> get("", (req, res) -> "healthy"));
 
+        /**
+         * adds new item with provoded String id to cart
+         */
         path("/cart", () -> {
             get("/:id", (req, res) -> cart.addItem(new DummyItem(req.params("id"))), JSON_TRANSFORMER);
         });
 
+        /**
+         * gets list of items in cart
+         */
         path("/cart", () -> {
             get("/", (req, res) -> cart.getCart(), JSON_TRANSFORMER);
         });
 
+        /**
+         * clears the cart and returns empty cart
+         */
         path("/empty", () -> {
             get("/", (req, res) -> cart.clearCart(), JSON_TRANSFORMER);
         });
