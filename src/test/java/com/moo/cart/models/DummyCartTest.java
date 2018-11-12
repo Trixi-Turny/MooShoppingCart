@@ -25,16 +25,28 @@ class DummyCartTest {
     @Test
     public void shouldAddItemsToList(){
         DummyCart cart = new DummyCart();
-        cart.addItem("testItem");
-        cart.addItem("anotherTestItem");
-        assertEquals(cart.getCart(), Arrays.asList("testItem", "anotherTestItem"));
+        DummyItem item1 = new DummyItem("testItem");
+        DummyItem item2 = new DummyItem("anotherItem");
+
+        //When
+        cart.addItem(item1);
+        cart.addItem(item2);
+
+        //Then
+        assertEquals(cart.getCart(), Arrays.asList(item1, item2));
     }
 
     @Test
     public void shouldClearItemsAndGetEmptyListBack(){
+
+        //When
         DummyCart cart = new DummyCart("TestId");
         cart.addItem("anotherTestId");
+
+        //Then
         assertEquals(new ArrayList<String>(), cart.clearCart());
     }
+
+
 
 }
