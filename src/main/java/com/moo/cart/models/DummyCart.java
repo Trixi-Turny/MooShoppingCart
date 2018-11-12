@@ -8,28 +8,27 @@ import java.util.ArrayList;
  */
 public class DummyCart {
 
-    private  ArrayList<String> cart = new ArrayList<String>();
+    private  ArrayList<DummyItem> cart = new ArrayList<DummyItem>();
 
     private String id;
 
     public DummyCart(String id) {
-        this.id = id;
-        cart.add(this.id);
+        DummyItem item = new DummyItem(id);
+        cart.add(item);
 
     }
-
 
     public DummyCart(){}
 
 
     /**
      * Add item to cart
-     * @param id - String - the item to be added
-     * @return the cart
+     * @param item - DummyItem - the item to be added
+     * @return List of {@link DummyItem}s
      */
-    public ArrayList<String> addItem(String id){
-        this.cart.add(id);
-        return this.cart;
+    public ArrayList<DummyItem> addItem(DummyItem item){
+        this.cart.add(item);
+        return this.getCart();
     }
 
     /**
@@ -44,16 +43,16 @@ public class DummyCart {
      * Empty cart
      * @return empty list
      */
-    public ArrayList<String> clearCart(){
+    public ArrayList<DummyItem> clearCart(){
         this.cart.clear();
-        return this.cart;
+        return this.getCart();
     }
 
     /**
      * provide list of items
-     * @return ArrayList with item ids
+     * @return  List of {@link DummyItem}s
      */
-    public ArrayList<String> getCart(){
+    public ArrayList<DummyItem> getCart(){
         return this.cart;
 
     }

@@ -5,8 +5,9 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class DummyCartTest {
 
@@ -23,12 +24,13 @@ class DummyCartTest {
 
 
     @Test
-    public void shouldAddItemsToList(){
+    public void shouldAddItemsToList() {
         DummyCart cart = new DummyCart();
-        DummyItem item1 = new DummyItem("testItem");
-        DummyItem item2 = new DummyItem("anotherItem");
 
         //When
+
+        DummyItem item1 = new DummyItem("testItem");
+        DummyItem item2 = new DummyItem("anotherItem");
         cart.addItem(item1);
         cart.addItem(item2);
 
@@ -37,14 +39,15 @@ class DummyCartTest {
     }
 
     @Test
-    public void shouldClearItemsAndGetEmptyListBack(){
+    public void shouldClearItemsAndGetEmptyListBack() {
 
         //When
-        DummyCart cart = new DummyCart("TestId");
-        cart.addItem("anotherTestId");
+        DummyCart cart = new DummyCart();
+        DummyItem item = new DummyItem("testId");
+        cart.addItem(item);
 
         //Then
-        assertEquals(new ArrayList<String>(), cart.clearCart());
+        assertEquals(new ArrayList<DummyItem>(), cart.clearCart());
     }
 
 

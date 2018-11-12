@@ -3,6 +3,7 @@ package com.moo.cart;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.moo.cart.models.DummyCart;
+import com.moo.cart.models.DummyItem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import spark.Request;
@@ -47,7 +48,7 @@ public class ApplicationMain {
         path("/health", () -> get("", (req, res) -> "healthy"));
 
         path("/cart", () -> {
-            get("/:id", (req, res) -> cart.addItem(req.params("id")), JSON_TRANSFORMER);
+            get("/:id", (req, res) -> cart.addItem(new DummyItem(req.params("id"))), JSON_TRANSFORMER);
         });
 
         path("/cart", () -> {
