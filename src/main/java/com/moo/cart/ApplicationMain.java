@@ -50,6 +50,7 @@ public class ApplicationMain {
          */
         path("/health", () -> get("", (req, res) -> "healthy"));
 
+
         /**
          * adds new item with provoded String id to cart
          */
@@ -68,7 +69,7 @@ public class ApplicationMain {
          * clears the cart and returns empty cart
          */
         path("/empty", () -> {
-            get("/", (req, res) -> cart.clearCart(), JSON_TRANSFORMER);
+            delete("/", (req, res) -> cart.clearCart(), JSON_TRANSFORMER);
         });
 
 
