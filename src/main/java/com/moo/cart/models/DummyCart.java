@@ -10,11 +10,11 @@ public class DummyCart {
 
     private  ArrayList<DummyItem> cart = new ArrayList<DummyItem>();
 
-    private String id;
+    private String cartId;
 
     public DummyCart(String id) {
-        DummyItem item = new DummyItem(id);
-        cart.add(item);
+
+        this.cartId = id;
 
     }
 
@@ -36,7 +36,7 @@ public class DummyCart {
      * @return
      */
     public String getId() {
-        return this.id;
+        return this.cartId;
     }
 
     /**

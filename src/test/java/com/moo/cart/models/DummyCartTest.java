@@ -12,14 +12,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class DummyCartTest {
 
     @Test
-    public void shouldStoreCartId() {
+    public void shouldGetCorrectCartI() {
         // Given
 
         // When
         DummyCart cart = new DummyCart("ABC");
 
         // Then
-        assertEquals("ABC", cart.getId());
+        assertEquals(cart.getId(), "ABC");
     }
 
 
