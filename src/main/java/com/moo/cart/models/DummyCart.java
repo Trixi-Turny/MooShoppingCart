@@ -5,7 +5,11 @@ import java.util.ArrayList;
 
 /**
  * Facilitates cart functionality and item storage
+ * @author  Moo and Trixi Turny
+ * @version 1.0
+ * @since   2018-11-13
  */
+
 public class DummyCart {
 
     private  ArrayList<DummyItem> cart = new ArrayList<DummyItem>();
@@ -22,8 +26,8 @@ public class DummyCart {
 
 
     /**
-     * Add item to cart
-     * @param item - DummyItem - the item to be added
+     * Adds an item to a cart
+     * @param item - {@link DummyItem} - the item to be added
      * @return List of {@link DummyItem}s
      */
     public ArrayList<DummyItem> addItem(DummyItem item){
@@ -32,7 +36,7 @@ public class DummyCart {
     }
 
     /**
-     * Provide Id
+     * Provide Cart Id
      * @return - cart Id  - String
      */
     public String getId() {

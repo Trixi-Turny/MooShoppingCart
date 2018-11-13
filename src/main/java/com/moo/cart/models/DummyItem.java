@@ -2,6 +2,10 @@ package com.moo.cart.models;
 
 /**
  * Facilitates the storage of information about an item in the cart
+ *
+ * @author  Trixi Turny
+ * @version 1.0
+ * @since   2018-11-13
  */
 public class DummyItem {
     public void setId(String id) {
