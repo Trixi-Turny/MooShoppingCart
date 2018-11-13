@@ -73,7 +73,6 @@ public class ApplicationMain {
         });
 
 
-
         LOG.debug("Initialised routes");
     }
 
@@ -94,8 +93,6 @@ public class ApplicationMain {
         LOG.debug("Asking server to stop");
         Spark.stop();
     }
-
-
 
 
 }
