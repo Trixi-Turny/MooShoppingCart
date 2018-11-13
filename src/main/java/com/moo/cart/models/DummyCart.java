@@ -33,7 +33,7 @@ public class DummyCart {
 
     /**
      * Provide Id
-     * @return
+     * @return - cart Id  - String
      */
     public String getId() {
         return this.cartId;
@@ -41,7 +41,7 @@ public class DummyCart {
 
     /**
      * Empty cart
-     * @return empty list
+     * @return empty list ArrayList of {@link DummyItem}s
      */
     public ArrayList<DummyItem> clearCart(){
         this.cart.clear();
